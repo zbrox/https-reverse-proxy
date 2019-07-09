@@ -1,0 +1,11 @@
+- import_tasks: check_vars.yml
+- import_tasks: install.yml
+  tags:
+    - nginx
+    - certbot
+- import_tasks: nginx.yml
+  tags:
+    - nginx
+- import_tasks: certbot.yml
+  tags:
+    - certbot

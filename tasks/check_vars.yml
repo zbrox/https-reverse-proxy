@@ -1,0 +1,10 @@
+# Thanks to https://leucos.github.io/ansible-files-layout
+- name: check if all required variables are set
+  fail:
+    msg: "{{ var }} is not defined"
+  when: var not in vars
+  loop:
+    - domain_name
+    - site_name
+    - service_port
+    - certificate_contact_email

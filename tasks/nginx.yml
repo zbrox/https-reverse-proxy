@@ -1,0 +1,20 @@
+- name: setup nginx reverse proxy
+  become: true
+  template:
+    src: ../templates/nginx.j2
+    dest: /etc/nginx/sites-available/{{ site_name }}
+- name: put reverse proxy site config in enabled
+  become: true
+  file:
+    src: /etc/nginx/sites-available/{{ site_name }}
+    dest: /etc/nginx/sites-enabled/{{ site_name }}
+    state: link
+- name: test nginx configuration
+  become: true
+  command: nginx -t
+- name: reload nginx service
+  become: true
+  service:
+    name: nginx
+    state: reloaded
+    enabled: yes
