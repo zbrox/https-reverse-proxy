@@ -1,0 +1,6 @@
+- name: get a certificate
+  become: true
+  command: "certbot --nginx -d {{ domain_name }} --non-interactive --agree-tos -m {{ certificate_contact_email }}"
+- name: setup autorenew of certificate
+  become: true
+  command: certbot renew
