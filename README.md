@@ -38,6 +38,7 @@ In order to use the role just include it in your playbook, for example like this
 ## Optional variables
 
 - `https_reverse_proxy_service_host`: the default value is `localhost`; you can specify this in order to proxy the traffic to some other host instead
+- `https_reverse_proxy_redirect`: the default is `yes`; this means that by default all HTTP traffic will be redirected to HTTPS
 
 # License
 

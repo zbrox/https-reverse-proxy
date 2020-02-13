@@ -1,2 +1,3 @@
 ---
 https_reverse_proxy_service_host: localhost
+https_reverse_proxy_redirect: yes
