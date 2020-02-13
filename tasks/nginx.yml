@@ -2,12 +2,12 @@
   become: true
   template:
     src: ../templates/nginx.j2
-    dest: /etc/nginx/sites-available/{{ site_name }}
+    dest: /etc/nginx/sites-available/{{ https_reverse_proxy_site_name }}
 - name: put reverse proxy site config in enabled
   become: true
   file:
-    src: /etc/nginx/sites-available/{{ site_name }}
-    dest: /etc/nginx/sites-enabled/{{ site_name }}
+    src: /etc/nginx/sites-available/{{ https_reverse_proxy_site_name }}
+    dest: /etc/nginx/sites-enabled/{{ https_reverse_proxy_site_name }}
     state: link
 - name: test nginx configuration
   become: true

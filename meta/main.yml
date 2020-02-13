@@ -1,0 +1,21 @@
+galaxy_info:
+  author: Rostislav Raykov
+  description: A simple role for running a reverse https nginx proxy with a Letsencrypt certificate
+
+  license: MIT
+
+  min_ansible_version: 2.4
+  
+  platforms:
+    - name: Ubuntu
+      versions:
+        - 18.04
+
+  galaxy_tags:
+    - nginx
+    - reverseproxy
+    - proxy
+    - letsencrypt
+    - https
+
+dependencies: []
