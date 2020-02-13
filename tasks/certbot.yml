@@ -1,6 +1,6 @@
 - name: get a certificate
   become: yes
-  command: "certbot --nginx -d {{ https_reverse_proxy_domain_name }} --non-interactive --agree-tos -m {{ https_reverse_proxy_certificate_contact_email }}"
+  command: "certbot --nginx -d {{ https_reverse_proxy_domain_name }} --non-interactive --agree-tos -m {{ https_reverse_proxy_certificate_contact_email }} {{ '--redirect' if https_reverse_proxy_redirect }}"
 - name: setup autorenew of certificate
   become: yes
   command: certbot renew
