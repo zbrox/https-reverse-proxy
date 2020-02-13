@@ -1,6 +1,12 @@
+- name: check if certificate exists
+  stat:
+    path: /etc/letsencrypt/live/{{ https_reverse_proxy_domain_name }}/fullchain.pem
+  register: certificate_file_exists
 - name: get a certificate
-  become: true
+  become: yes
   command: "certbot --nginx -d {{ https_reverse_proxy_domain_name }} --non-interactive --agree-tos -m {{ https_reverse_proxy_certificate_contact_email }}"
+  when: not certificate_file_exists.stat.exists
 - name: setup autorenew of certificate
-  become: true
+  become: yes
   command: certbot renew
+  when: certificate_file_exists.stat.exists

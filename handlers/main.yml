@@ -1,2 +1,4 @@
 ---
-# handlers file for nginx_reverse_proxy
+- name: test nginx configuration
+  become: yes
+  command: nginx -t
