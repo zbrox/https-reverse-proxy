@@ -4,7 +4,7 @@
     msg: "{{ var }} is not defined"
   when: var not in vars
   loop:
-    - domain_name
-    - site_name
-    - service_port
-    - certificate_contact_email
+    - https_reverse_proxy_domain_name
+    - https_reverse_proxy_site_name
+    - https_reverse_proxy_service_port
+    - https_reverse_proxy_certificate_contact_email
