@@ -1,8 +1,8 @@
 # Thanks to https://leucos.github.io/ansible-files-layout
 - name: check if all required variables are set
   fail:
-    msg: "{{ item }} is not defined"
-  when: item not in vars
+    msg: "{{ item }} is not defined or empty"
+  when: item not in vars or vars[item] == ""
   with_items:
     - https_reverse_proxy_domain_name
     - https_reverse_proxy_site_name
