@@ -5,7 +5,7 @@ for it using Letsencrypt. The certificate is set to be autorenewed every 3 month
 
 # Requirements
 
-The role currently supports only Ubuntu
+The role currently supports only Ubuntu 20.04 (using snap to install Certbot)
 
 # Installation
 

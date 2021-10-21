@@ -1,10 +1,11 @@
-- name: setup certbot apt repo
+- name: install certbot
   become: yes
-  apt_repository:
-    repo: "ppa:certbot/certbot"
-- name: install nginx and certbot
+  snap:
+    name: certbot
+    classic: yes
+- name: install nginx
   become: yes
   apt:
     force_apt_get: yes
-    name: ["nginx", "python-certbot-nginx"]
+    name: ["nginx"]
     update_cache: yes
