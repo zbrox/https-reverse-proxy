@@ -3,6 +3,7 @@
   template:
     src: templates/nginx.j2
     dest: /etc/nginx/sites-available/{{ https_reverse_proxy_site_name }}
+    mode: '644'
   notify:
     - test nginx configuration
 - name: put reverse proxy site config in enabled
