@@ -2,7 +2,7 @@
 - name: check if all required variables are set
   fail:
     msg: "{{ item }} is not defined or empty"
-  when: item not in vars or vars[item]|length > 0
+  when: item not in vars or vars[item] is not defined 
   with_items:
     - https_reverse_proxy_domain_name
     - https_reverse_proxy_site_name
